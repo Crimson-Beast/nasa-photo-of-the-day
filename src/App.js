@@ -1,13 +1,19 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
+import axios from "axios";
+import { base_Url , Api_Key } from "./components/webUrl"
+import POTD from "./components/POTD";
 
 function App() {
+  const [data, setData] = useState([])
+  useEffect(() => {
+    axios.get(`${base_Url}?api_key=${Api_Key}`)
+    .then(({data}) => setData(data))
+    .catch(err => console.log(`Error getting picture Data` , err))
+  }, [])
   return (
     <div className="App">
-      <p>
-        Read through the instructions in the README.md file to build your NASA
-        app! Have fun <span role="img" aria-label='go!'>🚀</span>!
-      </p>
+      <POTD data={data}/>
     </div>
   );
 }

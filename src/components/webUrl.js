@@ -1,0 +1,3 @@
+export const base_Url = 'https://api.nasa.gov/planetary/apod'
+export const Api_Key = 'AYSM7ygxSLhy48NGF2iERp2FNrd9148SYctebpgr'
+// when placed together should look like this ..../apod?api_key=AYS...
