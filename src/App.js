@@ -11,6 +11,7 @@ function App() {
     .then(({data}) => setData(data))
     .catch(err => console.log(`Error getting picture Data` , err))
   }, [])
+  console.log(data)
   return (
     <div className="App">
       <POTD data={data}/>
